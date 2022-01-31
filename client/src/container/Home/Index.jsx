@@ -5,6 +5,7 @@ import Men from '../../assets/images/Home/home-img.png';
 import Navbar from '../../components/Navbar/Index';
 import About from '../../components/About/Index';
 import Shop from '../../components/Shop Section/Index';
+import Contact from '../../components/Contact Section/Index';
 
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
       </div>
       <About />
       <Shop />
+      <Contact />
     </>
   );
 }
