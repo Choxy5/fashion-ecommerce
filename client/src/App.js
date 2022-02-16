@@ -1,11 +1,16 @@
 import './App.scss';
+import { Routes, Route } from 'react-router-dom';
 import Home from './container/Home/Index';
+import Login from './container/Login/Index';
+import Register from './container/Register/Index';
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/*" element={<Home />} />
+    </Routes>
   );
 }
 
