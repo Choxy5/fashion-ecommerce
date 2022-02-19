@@ -1,0 +1,180 @@
+.cart {
+  .cart__wrapper {
+    padding: 70px 50px;
+
+    .cart__title {
+      font-weight: 300;
+      text-align: center;
+      font-family: 'Poppins';
+      pointer-events: none;
+    }
+
+    .cart__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+
+      .cart__top_button {
+        padding: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Poppins';
+      }
+
+      .continue {
+        background-color: transparent;
+        border: 1px solid #000;
+      }
+
+      .cart__top__texts {
+        pointer-events: none;
+        .cart__top_text {
+        }
+      }
+
+      .checkout {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 14px;
+      }
+    }
+
+    .cart__bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+
+      .cart__info {
+        flex: 3;
+
+        .cart__product {
+          display: flex;
+          justify-content: space-between;
+
+          .cart__product_detail {
+            flex: 2;
+            display: flex;
+
+            .cart__product_img {
+              width: 200px;
+              object-fit: cover;
+            }
+
+            .details {
+              display: flex;
+              flex-direction: column;
+              padding: 20px;
+              justify-content: space-around;
+
+              .details__product_name {
+                pointer-events: none;
+                font-family: 'Poppins';
+              }
+
+              .details__product_id {
+                pointer-events: none;
+                font-family: 'Poppins';
+              }
+
+              .details__product_color {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #000;
+                pointer-events: none;
+              }
+
+              .details__product_size {
+                pointer-events: none;
+                font-family: 'Poppins';
+              }
+            }
+          }
+          .cart__product_price {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .price__amount_container {
+              display: flex;
+              align-items: center;
+              margin-bottom: 20px;
+
+              .product__amount {
+                font-size: 24px;
+                margin: 10px;
+                pointer-events: none;
+                font-family: 'Poppins';
+              }
+            }
+            .product__price {
+              font-size: 30px;
+              font-weight: 300;
+              pointer-events: none;
+              font-family: 'Poppins';
+            }
+          }
+        }
+
+        .space {
+          background-color: #eee;
+          border: none;
+          height: 2px;
+          margin: 5px 0;
+        }
+      }
+
+      .cart__summary {
+        flex: 1;
+        border: 0.5px solid lightgray;
+        border-radius: 10px;
+        padding: 20px;
+        height: 50vh;
+        margin-left: 40px;
+
+        .summary__title {
+          font-weight: 200;
+          font-size: 40px;
+          font-family: 'Poppins';
+          pointer-events: none;
+        }
+
+        .summary__item {
+          margin: 25px 0;
+          display: flex;
+          justify-content: space-between;
+
+          .summary__item_text {
+            font-family: 'Poppins';
+            pointer-events: none;
+          }
+
+          .summary__item_price {
+            pointer-events: none;
+            font-family: 'Poppins';
+          }
+
+          .total {
+            font-weight: 500;
+            font-size: 24px;
+          }
+        }
+
+        .summary__item_button {
+          width: 100%;
+          padding: 10px;
+          background-color: #000;
+          color: #fff;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+          font-family: 'Poppins';
+        }
+      }
+    }
+  }
+}
