@@ -72,7 +72,7 @@ function Cart() {
                     <b>Color:</b>
                   </span>
                   <span className="details__product_size">
-                    <b>Size: </b> XLb
+                    <b>Size: </b> XL
                   </span>
                 </div>
               </div>
