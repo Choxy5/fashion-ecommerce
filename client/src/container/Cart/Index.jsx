@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.scss';
 
 import { Footer, Navbar } from '../../components';
@@ -6,8 +6,34 @@ import { Footer, Navbar } from '../../components';
 import img1 from '../../assets/images/Men/Black Jacket.jpg';
 import img2 from '../../assets/images/Men/Blue Jacket.jpg';
 import { IoAddCircleOutline, IoRemoveCircleOutline } from 'react-icons/io5';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
+
+const KEY =
+  'pk_test_51Ik3tkDdV8v82oEKDaolTLNFqfnKW7hDRDefLVdzTJi8fJtPpTvXWvuWVp3mTmjwBQgyDfEF7wTS7NSdVoAmo0KV00QTpA0V3o';
 
 function Cart() {
+  const [stripeToken, setStripeToken] = useState();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await axios.post('http://localhost:5000/checkout/payment', {
+          tokenId: stripeToken.id,
+          amount: 2000,
+        });
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken]);
+
   return (
     <div className="cart">
       <Navbar />
@@ -108,7 +134,24 @@ function Cart() {
               <div className="summary__item_text total">Total</div>
               <div className="summary__item_price total">40 €</div>
             </div>
-            <button className="summary__item_button">CHECKOUT NOW</button>
+            {stripeToken ? (
+              <span>
+                Processing... <br /> Please Wait.
+              </span>
+            ) : (
+              <StripeCheckout
+                name="Kristijan Blazevic"
+                image="https://avatars.githubusercontent.com/u/72465847?v=4"
+                billingAddress
+                shippingAddress
+                description="Your total is $20"
+                amount={2000}
+                token={onToken}
+                stripeKey={KEY}
+              >
+                <button className="summary__item_button">CHECKOUT NOW</button>
+              </StripeCheckout>
+            )}
           </div>
         </div>
       </div>
